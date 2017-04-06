@@ -31,9 +31,4 @@ fun parserTree(expr: String): String {
     return tree.toStringTree(parser)
 }
 
-fun eval(expr: String): Long {
-    val eval = EvalVistor()
-    val parser = parser(expr)
-    val tree = parser.start()
-    return eval.visit(tree)
-}
+fun eval(expr: String): Long = EvalVistor().visit(parser(expr).start())

@@ -14,6 +14,7 @@ buildscript {
 
 apply plugin: 'kotlin'
 apply plugin: 'application'
+apply plugin: 'antlr'
 
 mainClassName = "xyz.javecs.expr.ExprApplicationKt"
 
@@ -23,6 +24,12 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    antlr "org.antlr:antlr4:4.7"
     testCompile 'junit:junit:4.12'
     testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+}
+
+generateGrammarSource {
+    outputDirectory = file('src/main/java/xyz/javecs/expr/parser')
+    arguments = ['-no-listener', '-package', 'xyz.javecs.expr.parser']
 }

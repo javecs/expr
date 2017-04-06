@@ -31,5 +31,5 @@ dependencies {
 
 generateGrammarSource {
     outputDirectory = file('src/main/java/xyz/javecs/expr/parser')
-    arguments = ['-no-listener', '-package', 'xyz.javecs.expr.parser']
+    arguments = ['-no-listener', '-visitor', '-package', 'xyz.javecs.expr.parser']
 }

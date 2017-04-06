@@ -6,7 +6,7 @@ import xyz.javecs.expr.parser.ExprBaseVisitor
 import xyz.javecs.expr.parser.ExprLexer
 import xyz.javecs.expr.parser.ExprParser
 
-class EvalVistor : ExprBaseVisitor<Long>() {
+class EvalVisitor : ExprBaseVisitor<Long>() {
     override fun visitInt(ctx: ExprParser.IntContext?): Long {
         return ctx!!.INT().text.toLong()
     }
@@ -31,4 +31,4 @@ fun parserTree(expr: String): String {
     return tree.toStringTree(parser)
 }
 
-fun eval(expr: String): Long = EvalVistor().visit(parser(expr).start())
+fun eval(expr: String): Long = EvalVisitor().visit(parser(expr).start())

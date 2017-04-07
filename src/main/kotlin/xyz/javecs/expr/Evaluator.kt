@@ -22,6 +22,12 @@ class EvalVisitor : ExprBaseVisitor<Double>() {
         val right = visit(ctx.expr(1))
         return left - right
     }
+
+    override fun visitMul(ctx: ExprParser.MulContext?): Double {
+        val left = visit(ctx!!.expr(0))
+        val right = visit(ctx.expr(1))
+        return left * right
+    }
 }
 
 fun parser(expr: String): ExprParser {
@@ -39,11 +45,10 @@ fun parserTree(expr: String): String {
 
 fun eval(expr: String): Number {
     val value = EvalVisitor().visit(parser(expr).start())
-    if (value == Math.floor(value)) {
-        return when {
+    return if (value == Math.floor(value)) {
+        when {
             value < Int.MAX_VALUE -> value.toInt()
             else -> value.toLong()
         }
-    }
-    return value
+    } else value
 }

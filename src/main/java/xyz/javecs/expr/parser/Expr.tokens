@@ -1,7 +1,9 @@
 T__0=1
 T__1=2
-NUMBER=3
-NEWLINE=4
-WS=5
+T__2=3
+NUMBER=4
+NEWLINE=5
+WS=6
 '+'=1
 '-'=2
+'*'=3

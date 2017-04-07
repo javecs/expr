@@ -16,6 +16,12 @@ class EvalVisitor : ExprBaseVisitor<Long>() {
         val right = visit(ctx.expr(1))
         return left + right
     }
+
+    override fun visitSub(ctx: ExprParser.SubContext?): Long {
+        val left = visit(ctx!!.expr(0))
+        val right = visit(ctx.expr(1))
+        return left - right
+    }
 }
 
 fun parser(expr: String): ExprParser {

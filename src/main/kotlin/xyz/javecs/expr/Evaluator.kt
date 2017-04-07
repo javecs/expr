@@ -22,6 +22,12 @@ class EvalVisitor : ExprBaseVisitor<Double>() {
         val right = visit(ctx.expr(1))
         return left - right
     }
+
+    override fun visitMul(ctx: ExprParser.MulContext?): Double {
+        val left = visit(ctx!!.expr(0))
+        val right = visit(ctx.expr(1))
+        return left * right
+    }
 }
 
 fun parser(expr: String): ExprParser {

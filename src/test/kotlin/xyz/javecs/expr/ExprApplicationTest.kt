@@ -18,5 +18,9 @@ class TestApplication {
         assertEquals(0.5, eval("4.5 - 4"))
     }
 
+    @Test fun evalMul() {
+        assertEquals(12, eval("3 * 4"))
+        assertEquals(14.85, eval("4.5 * 3.3"))
+    }
 }
 

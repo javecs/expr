@@ -28,6 +28,12 @@ class EvalVisitor : ExprBaseVisitor<Double>() {
         val right = visit(ctx.expr(1))
         return left * right
     }
+
+    override fun visitDiv(ctx: ExprParser.DivContext?): Double {
+        val left = visit(ctx!!.expr(0))
+        val right = visit(ctx.expr(1))
+        return if (right == 0.0) Double.NaN else left / right
+    }
 }
 
 fun parser(expr: String): ExprParser {

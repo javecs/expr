@@ -45,11 +45,10 @@ fun parserTree(expr: String): String {
 
 fun eval(expr: String): Number {
     val value = EvalVisitor().visit(parser(expr).start())
-    if (value == Math.floor(value)) {
-        return when {
+    return if (value == Math.floor(value)) {
+        when {
             value < Int.MAX_VALUE -> value.toInt()
             else -> value.toLong()
         }
-    }
-    return value
+    } else value
 }

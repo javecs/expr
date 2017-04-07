@@ -11,5 +11,9 @@ class TestApplication {
     @Test fun evalAdd() {
         assertEquals(7, eval("3 + 4"))
     }
+
+    @Test fun evalSub() {
+        assertEquals(-1, eval("3 - 4"))
+    }
 }
 

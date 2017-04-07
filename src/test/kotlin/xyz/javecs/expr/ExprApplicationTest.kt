@@ -22,5 +22,10 @@ class TestApplication {
         assertEquals(12, eval("3 * 4"))
         assertEquals(14.85, eval("4.5 * 3.3"))
     }
+
+    @Test fun evalDiv() {
+        assertEquals(12, eval("60 / 5"))
+        assertEquals(Double.NaN, eval("1 / 0"))
+    }
 }
 

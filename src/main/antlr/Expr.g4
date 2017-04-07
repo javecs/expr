@@ -4,8 +4,8 @@ start: stat+ ;
 stat: expr NEWLINE? ;
 expr: expr '+' expr     # Add
     | expr '-' expr     # Sub
-    | INT               # int
+    | NUMBER            # Number
     ;
-INT: [0-9]+ ;
+NUMBER: [0-9]+('.'[0-9]+)? ;
 NEWLINE: '\r'? '\n' ;
 WS: [ \t]+ -> skip ;

@@ -17,7 +17,7 @@ public class ExprParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, INT=3, NEWLINE=4, WS=5;
+		T__0=1, T__1=2, NUMBER=3, NEWLINE=4, WS=5;
 	public static final int
 		RULE_start = 0, RULE_stat = 1, RULE_expr = 2;
 	public static final String[] ruleNames = {
@@ -28,7 +28,7 @@ public class ExprParser extends Parser {
 		null, "'+'", "'-'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
-		null, null, null, "INT", "NEWLINE", "WS"
+		null, null, null, "NUMBER", "NEWLINE", "WS"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -117,7 +117,7 @@ public class ExprParser extends Parser {
 				setState(9); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( _la==INT );
+			} while ( _la==NUMBER );
 			}
 		}
 		catch (RecognitionException re) {
@@ -218,12 +218,12 @@ public class ExprParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
-	public static class IntContext extends ExprContext {
-		public TerminalNode INT() { return getToken(ExprParser.INT, 0); }
-		public IntContext(ExprContext ctx) { copyFrom(ctx); }
+	public static class NumberContext extends ExprContext {
+		public TerminalNode NUMBER() { return getToken(ExprParser.NUMBER, 0); }
+		public NumberContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExprVisitor ) return ((ExprVisitor<? extends T>)visitor).visitInt(this);
+			if ( visitor instanceof ExprVisitor ) return ((ExprVisitor<? extends T>)visitor).visitNumber(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -244,12 +244,12 @@ public class ExprParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			{
-			_localctx = new IntContext(_localctx);
+			_localctx = new NumberContext(_localctx);
 			_ctx = _localctx;
 			_prevctx = _localctx;
 
 			setState(16);
-			match(INT);
+			match(NUMBER);
 			}
 			_ctx.stop = _input.LT(-1);
 			setState(26);

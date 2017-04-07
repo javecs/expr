@@ -6,18 +6,18 @@ import xyz.javecs.expr.parser.ExprBaseVisitor
 import xyz.javecs.expr.parser.ExprLexer
 import xyz.javecs.expr.parser.ExprParser
 
-class EvalVisitor : ExprBaseVisitor<Long>() {
-    override fun visitInt(ctx: ExprParser.IntContext?): Long {
-        return ctx!!.INT().text.toLong()
+class EvalVisitor : ExprBaseVisitor<Double>() {
+    override fun visitNumber(ctx: ExprParser.NumberContext?): Double {
+        return ctx!!.NUMBER().text.toDouble()
     }
 
-    override fun visitAdd(ctx: ExprParser.AddContext?): Long {
+    override fun visitAdd(ctx: ExprParser.AddContext?): Double {
         val left = visit(ctx!!.expr(0))
         val right = visit(ctx.expr(1))
         return left + right
     }
 
-    override fun visitSub(ctx: ExprParser.SubContext?): Long {
+    override fun visitSub(ctx: ExprParser.SubContext?): Double {
         val left = visit(ctx!!.expr(0))
         val right = visit(ctx.expr(1))
         return left - right
@@ -37,4 +37,13 @@ fun parserTree(expr: String): String {
     return tree.toStringTree(parser)
 }
 
-fun eval(expr: String): Long = EvalVisitor().visit(parser(expr).start())
+fun eval(expr: String): Number {
+    val value = EvalVisitor().visit(parser(expr).start())
+    if (value == Math.floor(value)) {
+        return when {
+            value < Int.MAX_VALUE -> value.toInt()
+            else -> value.toLong()
+        }
+    }
+    return value
+}

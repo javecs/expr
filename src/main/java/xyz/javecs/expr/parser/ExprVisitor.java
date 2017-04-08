@@ -23,19 +23,19 @@ public interface ExprVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStat(ExprParser.StatContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Add}
-	 * labeled alternative in {@link ExprParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAdd(ExprParser.AddContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code Div}
 	 * labeled alternative in {@link ExprParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitDiv(ExprParser.DivContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Add}
+	 * labeled alternative in {@link ExprParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAdd(ExprParser.AddContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code Sub}
 	 * labeled alternative in {@link ExprParser#expr}.
@@ -57,4 +57,11 @@ public interface ExprVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitMul(ExprParser.MulContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Parens}
+	 * labeled alternative in {@link ExprParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParens(ExprParser.ParensContext ctx);
 }

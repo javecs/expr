@@ -27,5 +27,10 @@ class TestApplication {
         assertEquals(12, eval("60 / 5"))
         assertEquals(Double.NaN, eval("1 / 0"))
     }
+
+    @Test fun evalParens() {
+        assertEquals(11, eval("3 + 4 * 2"))
+        assertEquals(14, eval("(3 + 4) * 2"))
+    }
 }
 

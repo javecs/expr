@@ -7,6 +7,7 @@ import xyz.javecs.expr.parser.ExprLexer
 import xyz.javecs.expr.parser.ExprParser
 
 class EvalVisitor : ExprBaseVisitor<Double>() {
+    override fun visitParens(ctx: ExprParser.ParensContext?) = visit(ctx!!.expr())!!
     override fun visitNumber(ctx: ExprParser.NumberContext?) = ctx!!.NUMBER().text.toDouble()
     override fun visitAdd(ctx: ExprParser.AddContext?) = visit(ctx!!.expr(0)) + visit(ctx.expr(1))
     override fun visitSub(ctx: ExprParser.SubContext?) = visit(ctx!!.expr(0)) - visit(ctx.expr(1))

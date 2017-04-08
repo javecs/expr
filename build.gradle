@@ -1,5 +1,5 @@
 group 'xyz.javecs'
-version '0.0.9-SNAPSHOT'
+version '0.0.9'
 
 buildscript {
     ext.kotlin_version = '1.1.1'

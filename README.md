@@ -24,7 +24,9 @@ val value = eval("3 + 4")
 ```
 
 ## サンプルアプリ
-
+- このライブラリを使った電卓です。
+    - https://github.com/javecs/calc
+  
 ## 使うもの
 
 - [ANTLR 4.7](http://www.antlr.org/)

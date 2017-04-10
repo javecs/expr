@@ -1,11 +1,20 @@
 language: java
+addons:
+  sonarqube:
+    organization: "javecs-github"
+    token:
+      secure: "o4Gq6aL03oxbHY8NSakpjUvKvtjF/awRIbhh9DXfwETGRpJtc8f0iD2nZy4aS0ZoevTbFu8eAHB0gj5Grpc3nHuenTORPWDke98HzHrTDVMrx8vbizULb9FgGpLueB+QAx22hPBwZNI9BJz073K+MrXQ56iBuOO1tedJIvwxYg89xFcGgOC7HWYnBTK1j4jFYzbSxmO5yoU9xLQku3bHM+HlEwLoXmV9FvplKs8GjsMLSgKdCvRlFZSoybfn5059lsZXaRDpNDzUM4Yrlrwm9dCkp1ALMIEgj8URS0cw345bJpoY86TmI6sCoRHSKxf7F1SFBUcoEpLkB+OvHBHyY5zFKXB0A3eIB+b7ET6ppwjUiJgDNr4sw/B0cfDC1m0PcyCcZD7v3Bo2AefIBPlDzxRtFMzGcmGAsMaantMsppFULluofAJ9B0oWXgleSH3g3bVueILal12VOH+Xh7GuwHHkOfcZNHgvAD0E0nt9f5CXgJ2NdSqdaDbGMI5xAFKsJO2RraTmw++hrPKyHG1oeO5cZaDpAoh2DLoBR4NAI0jIUEvqxVR6A+atJ3cKiQ5YxkxmU+mME/UmtJW42yK2u/408t2gq5MWP3F95h/nQ77u4YrvsUBphBXTPRpYiW+ze6jrbxgO+rD0gJ1XLPXAc8VavN1sDBVNha/2Xo6OIrc="
+    github_token:
+      secure: "ODuLrYoc55OTJY/0KhIBlPCMcRJjGXAfd8gkCtb30HBfu8YE4YOy+fTXru/5zEEwkHAtKssvX+F2AnjO9z9vZPzQYRrrLZAr/TSHvvaaFV+SI7myrHgsUURxT7hVPq4+NGdWuAVXkwzoIj0skEeXyG62APO4fPWqRoO9Fq6P49veQ0gVymLqn0/6ZzVx43jUsp4Ay9vxyxshLRwKWVCGBkeM7LtDtM/rkvi3/Q5eYJNjHF9MwjnSucGbPWyk+WXgZSwL1Ss7wCEIqg43ZcTuRLsakSyIu4QGYY1IYbC6fSClhaBR+pwb8sl0rusdughTNeV2nfdofggXfDGJmy56cHUYCmINAjX0GV+LoRCE11mmZD3qh2Kp7ZVWSgYCWW7K5TxP1yCoBvOBeQJXXFOdlD9faiq/jx1i0YVbSekIE5tBsjJtrRix0s+RnwfY7wuUE8S85He6P9tOCupyFvPHlBpYZK+ViU9ATvkKYFT4n+mnuciCwwcYj9M54k4KdXBCysWLf/e1cQFJs6SbdOAhKNOT7gB+QVcAF65mptdwPwnkLXZ4qegvaLhKgt4onYC8u7VfQ/t4eBEVswgDuMrfDGkWB8r3W4dsMreMzQ44qddsTJXdjWYWWndLBolGh+OLsSbSGlG5cJ0uc4LIEW/zxwtJeKATEOjT1ritSY6P6mU="
 jdk:
   - oraclejdk8
 script:
   - ./gradlew check
   - ./gradlew jacocoTestReport
+  - sonar-scanner
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -13,3 +22,4 @@ cache:
   directories:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
+    - $HOME/.sonar/cache/

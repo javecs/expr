@@ -16,7 +16,7 @@ plugins {
 }
 
 group 'xyz.javecs.tools'
-version '0.0.11'
+version '0.0.12'
 
 apply plugin: 'kotlin'
 apply plugin: 'antlr'
@@ -88,7 +88,7 @@ publishing {
             artifact javadocJar
             groupId 'xyz.javecs.tools'
             artifactId 'expr'
-            version '0.0.11'
+            version = project.version
             pom.withXml {
                 def root = asNode()
                 root.appendNode('description', 'Javecs Tools Expr')

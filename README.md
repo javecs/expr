@@ -3,6 +3,28 @@
 
 数式を計算します。
 
+## 使い方
+
+- gradle
+```
+repositories {
+	maven {
+		url  "http://dl.bintray.com/javecs/tools"
+	}
+}
+
+dependencies {
+	compile 'xyz.javecs.tools:expr:0.0.11'
+}
+```
+
+- kotlin
+```
+val value = eval("3 + 4")
+```
+
+## サンプルアプリ
+
 ## 使うもの
 
 - [ANTLR 4.7](http://www.antlr.org/)

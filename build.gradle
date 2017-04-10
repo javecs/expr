@@ -29,8 +29,9 @@ repositories {
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
     antlr "org.antlr:antlr4:4.7"
+    compile 'org.antlr:antlr4-runtime:4.7'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
     testCompile 'junit:junit:4.12'
     testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
 }
@@ -104,14 +105,14 @@ bintray {
     user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
     key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
     publications = ['ExprPublication']
+    configurations = ['archives']
     pkg {
         repo = 'tools'
         name = 'expr'
         licenses = ['MIT']
         vcsUrl = 'https://github.com/javecs/expr.git'
         version {
-            name = version
-            desc = 'Javecs Tools Expr 0.0.11'
+            name = project.version
             released  = new Date()
             gpg {
                 sign = true

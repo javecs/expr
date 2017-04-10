@@ -1,4 +1,4 @@
-package xyz.javecs.expr
+package xyz.javecs.tools.expr
 
 fun main(args: Array<String>) {
     val expr = "3 + 4"

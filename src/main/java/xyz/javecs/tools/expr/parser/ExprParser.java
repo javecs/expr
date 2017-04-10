@@ -1,5 +1,5 @@
 // Generated from Expr.g4 by ANTLR 4.7
-package xyz.javecs.expr.parser;
+package xyz.javecs.tools.expr.parser;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;

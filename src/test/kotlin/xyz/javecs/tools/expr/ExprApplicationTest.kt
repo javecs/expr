@@ -1,4 +1,4 @@
-package xyz.javecs.expr
+package xyz.javecs.tools.expr
 
 import kotlin.test.assertEquals
 import org.junit.Test

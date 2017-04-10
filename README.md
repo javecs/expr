@@ -8,13 +8,13 @@
 - gradle
 ```
 repositories {
-	maven {
-		url  "http://dl.bintray.com/javecs/tools"
-	}
+    maven {
+        url  "http://dl.bintray.com/javecs/tools"
+    }
 }
 
 dependencies {
-	compile 'xyz.javecs.tools:expr:バージョン'
+    compile 'xyz.javecs.tools:expr:x.x.x'
     compile 'org.antlr:antlr4-runtime:4.7'	
 }
 ```

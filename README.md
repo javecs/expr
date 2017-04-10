@@ -14,7 +14,8 @@ repositories {
 }
 
 dependencies {
-	compile 'xyz.javecs.tools:expr:0.0.11'
+	compile 'xyz.javecs.tools:expr:バージョン'
+    compile 'org.antlr:antlr4-runtime:4.7'	
 }
 ```
 

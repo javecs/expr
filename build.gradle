@@ -1,4 +1,4 @@
-group 'xyz.javecs'
+group 'xyz.javecs.tools'
 version '0.0.9'
 
 buildscript {
@@ -28,8 +28,8 @@ dependencies {
 }
 
 generateGrammarSource {
-    outputDirectory = file('src/main/java/xyz/javecs/expr/parser')
-    arguments = ['-no-listener', '-visitor', '-package', 'xyz.javecs.expr.parser']
+    outputDirectory = file('src/main/java/xyz/javecs/tools/expr/parser')
+    arguments = ['-no-listener', '-visitor', '-package', 'xyz.javecs.tools.expr.parser']
 }
 
 task sourcesJar(type: Jar, dependsOn:classes) {

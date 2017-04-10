@@ -1,10 +1,10 @@
-package xyz.javecs.expr
+package xyz.javecs.tools.expr
 
 import org.antlr.v4.runtime.ANTLRInputStream
 import org.antlr.v4.runtime.CommonTokenStream
-import xyz.javecs.expr.parser.ExprBaseVisitor
-import xyz.javecs.expr.parser.ExprLexer
-import xyz.javecs.expr.parser.ExprParser
+import xyz.javecs.tools.expr.parser.ExprBaseVisitor
+import xyz.javecs.tools.expr.parser.ExprLexer
+import xyz.javecs.tools.expr.parser.ExprParser
 
 class EvalVisitor : ExprBaseVisitor<Double>() {
     override fun visitParens(ctx: ExprParser.ParensContext?) = visit(ctx!!.expr())!!

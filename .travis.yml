@@ -1,7 +1,7 @@
 language: java
 addons:
   sonarqube:
-    organization: "javecs-github"
+    organization: "javecs-tools-expr"
     token:
       secure: "o4Gq6aL03oxbHY8NSakpjUvKvtjF/awRIbhh9DXfwETGRpJtc8f0iD2nZy4aS0ZoevTbFu8eAHB0gj5Grpc3nHuenTORPWDke98HzHrTDVMrx8vbizULb9FgGpLueB+QAx22hPBwZNI9BJz073K+MrXQ56iBuOO1tedJIvwxYg89xFcGgOC7HWYnBTK1j4jFYzbSxmO5yoU9xLQku3bHM+HlEwLoXmV9FvplKs8GjsMLSgKdCvRlFZSoybfn5059lsZXaRDpNDzUM4Yrlrwm9dCkp1ALMIEgj8URS0cw345bJpoY86TmI6sCoRHSKxf7F1SFBUcoEpLkB+OvHBHyY5zFKXB0A3eIB+b7ET6ppwjUiJgDNr4sw/B0cfDC1m0PcyCcZD7v3Bo2AefIBPlDzxRtFMzGcmGAsMaantMsppFULluofAJ9B0oWXgleSH3g3bVueILal12VOH+Xh7GuwHHkOfcZNHgvAD0E0nt9f5CXgJ2NdSqdaDbGMI5xAFKsJO2RraTmw++hrPKyHG1oeO5cZaDpAoh2DLoBR4NAI0jIUEvqxVR6A+atJ3cKiQ5YxkxmU+mME/UmtJW42yK2u/408t2gq5MWP3F95h/nQ77u4YrvsUBphBXTPRpYiW+ze6jrbxgO+rD0gJ1XLPXAc8VavN1sDBVNha/2Xo6OIrc="
     github_token:

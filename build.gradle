@@ -84,7 +84,6 @@ def pomConfig = {
 publishing {
     publications {
         ExprPublication(MavenPublication) {
-            from components.java
             artifact sourcesJar
             artifact javadocJar
             groupId 'xyz.javecs.tools'

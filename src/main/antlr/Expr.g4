@@ -4,6 +4,7 @@ start: stat+ ;
 stat: expr NEWLINE? ;
 expr: expr '*' expr     # Mul
     | expr '/' expr     # Div
+    | expr '%' expr     # Mod
     | expr '+' expr     # Add
     | expr '-' expr     # Sub
     | '(' expr ')'      # Parens

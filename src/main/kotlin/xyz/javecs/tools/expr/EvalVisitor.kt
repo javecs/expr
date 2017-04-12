@@ -10,6 +10,7 @@ class EvalVisitor : ExprBaseVisitor<Double>() {
     override fun visitSub(ctx: ExprParser.SubContext?) = visit(ctx!!.expr(0)) - visit(ctx.expr(1))
     override fun visitMul(ctx: ExprParser.MulContext?) = visit(ctx!!.expr(0)) * visit(ctx.expr(1))
     override fun visitMod(ctx: ExprParser.ModContext?) = visit(ctx!!.expr(0)) % visit(ctx.expr(1))
+    override fun visitPow(ctx: ExprParser.PowContext?) = Math.pow(visit(ctx!!.expr(0)), visit(ctx.expr(1)))
     override fun visitDiv(ctx: ExprParser.DivContext?): Double {
         val left = visit(ctx!!.expr(0))
         val right = visit(ctx.expr(1))

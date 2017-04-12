@@ -32,9 +32,14 @@ class TestApplication {
         assertEquals(1, eval("7 % 3"))
     }
 
+    @Test fun evalPow() {
+        assertEquals(8, eval("2 ^ 3"))
+    }
+
     @Test fun evalParens() {
         assertEquals(11, eval("3 + 4 * 2"))
         assertEquals(14, eval("(3 + 4) * 2"))
     }
+
 }
 

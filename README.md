@@ -18,7 +18,7 @@ repositories {
 }
 
 dependencies {
-    compile 'xyz.javecs.tools:expr:0.0.+'
+    compile 'xyz.javecs.tools:expr:0.1.+'
 }
 ```
 

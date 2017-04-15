@@ -19,11 +19,5 @@ fun parserTree(expr: String): String {
 }
 
 fun eval(expr: String): Number {
-    val value = EvalVisitor().visit(parser(expr).start())
-    return if (value == Math.floor(value)) {
-        when {
-            value < Int.MAX_VALUE -> value.toInt()
-            else -> value.toLong()
-        }
-    } else value
+    return EvalVisitor(Calculator()).visit(parser(expr).start()).getValue()
 }

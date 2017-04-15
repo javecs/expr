@@ -27,10 +27,14 @@ dependencies {
 val value = eval("3 + 4")
 ```
 
-## サンプルアプリ
-- このライブラリを使った電卓です。
+## このライブラリを使ったサンプルアプリ
+
+- 電卓です。
     - https://github.com/javecs/calc
-  
+    
+- LINE Messaging APIと連携したBotです。
+    - https://github.com/javecs/calc-bot
+    
 ## 使うもの
 
 - [ANTLR 4.7](http://www.antlr.org/)

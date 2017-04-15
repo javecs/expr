@@ -1,17 +1,19 @@
 grammar Expr;
 
 start: stat+ ;
-stat: expr NEWLINE? ;
+stat: expr              # StatExpr
+    | ID '=' expr       # Assign
+    ;
 expr: expr '*' expr     # Mul
     | expr '/' expr     # Div
     | expr '%' expr     # Mod
     | expr '^' expr     # Pow
     | expr '+' expr     # Add
     | expr '-' expr     # Sub
-    | '(' expr ')'      # Parens
     | NUMBER            # Number
+    | ID                # Id
     | '(' expr ')'      # Parens
     ;
 NUMBER: [0-9]+('.'[0-9]+)? ;
-NEWLINE: '\r'? '\n' ;
-WS: [ \t]+ -> skip ;
+ID: [a-zA-Z][a-zA-Z0-9]* ;
+WS: [ \t\r\n]+ -> skip ;

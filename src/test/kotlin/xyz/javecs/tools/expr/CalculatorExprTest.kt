@@ -3,7 +3,7 @@ package xyz.javecs.tools.expr
 import kotlin.test.assertEquals
 import org.junit.Test
 
-class CalculatorTest {
+class CalculatorExprTest {
     @Test fun calcExpr1() {
         val expr = "3 + 4"
         assertEquals(7, Calculator(arrayOf(expr)).evaluate().getValue())

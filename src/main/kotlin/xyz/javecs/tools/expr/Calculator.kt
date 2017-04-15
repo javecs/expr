@@ -4,7 +4,7 @@ import kotlin.collections.HashMap
 
 class Calculator(expressions: Array<String> = emptyArray()) : CalculatorContext {
     private val evaluator = EvalVisitor(this)
-    private val symbol: HashMap<String, Number> = HashMap()
+    private val symbol: HashMap<String, Double> = HashMap()
     private var expression = Expression()
 
     init {
@@ -24,8 +24,8 @@ class Calculator(expressions: Array<String> = emptyArray()) : CalculatorContext 
         }
     }
 
-    override fun getSymbol(name: String): Number? = symbol[name]
-    override fun putSymbol(name:String, value: Number) {
+    override fun getSymbol(name: String): Double = symbol.getOrDefault(name, Double.NaN)
+    override fun putSymbol(name:String, value: Double) {
         symbol[name] = value
     }
 }

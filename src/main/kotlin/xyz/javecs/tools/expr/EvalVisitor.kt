@@ -16,4 +16,17 @@ class EvalVisitor(val context: CalculatorContext) : ExprBaseVisitor<Expression>(
         val right = visit(ctx.expr(1)).value
         return if (right == 0.0) Expression(Double.NaN) else Expression(left / right)
     }
+
+    override fun visitId(ctx: ExprParser.IdContext?): Expression {
+        val id = ctx!!.ID().text
+        return Expression(id = id, value = context.getSymbol(id))
+    }
+
+    override fun visitAssign(ctx: ExprParser.AssignContext?): Expression {
+        val id = ctx!!.ID().text
+        val value = visit(ctx.expr()).value
+        context.putSymbol(id, value)
+        return Expression(id = id, value = value)
+    }
+
 }

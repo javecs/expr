@@ -27,4 +27,9 @@ class CalculatorTest {
         assertEquals(10, calc.evaluate("3 + 7").getValue())
         assertEquals(11, calc.evaluate("3 + 8").getValue())
     }
+
+    @Test fun calcExpr5() {
+        val calc = Calculator(arrayOf("30 + 40"))
+        assertEquals("70", calc.evaluate().toString())
+    }
 }

@@ -3,7 +3,7 @@ package xyz.javecs.tools.expr
 import kotlin.test.assertEquals
 import org.junit.Test
 
-class CalculatorEvaluateTest {
+class CalculatorEvalTest {
     @Test fun calcEvaluateTest1() {
         val calc = Calculator()
                 .eval("x=3")

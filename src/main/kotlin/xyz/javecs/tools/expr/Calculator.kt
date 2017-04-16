@@ -27,6 +27,11 @@ class Calculator(expressions: Array<String> = emptyArray()) : EvalContext {
         return this
     }
 
+    fun clear() {
+        symbol.clear()
+        expression = Expression()
+    }
+
     override fun getSymbol(name: String): Double = symbol.getOrDefault(name, Double.NaN)
     override fun putSymbol(name:String, value: Double) {
         symbol[name] = value

@@ -9,7 +9,7 @@
 
 ## 使い方
 
-### gradle
+### Gradle
 - 依存関係を設定してください。
     ```
     repositories {
@@ -109,7 +109,24 @@
   cos | コサイン。三角関数の余弦。 | cos(1) | 0.5403023058681398
   tan | タンジェント。三角関数の正接。 | tan(1) | 1.5574077246549023
   
-  
+
+## Javaからの呼び出し方
+
+- eval()は、スタティクメッソードで呼びます。
+
+    ```
+    Number value = Evaluator.eval("3 + 4");
+    ```
+
+- Calculatorは、通常のクラスとして使えます。
+
+    ```
+    Calculator calc = new Calculator();
+    calc.eval("3 + 4");
+    Number value = calc.getValue();
+    ```
+
+
 ## サンプルアプリ
 
 - 電卓です。

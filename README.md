@@ -22,24 +22,38 @@ dependencies {
 }
 ```
 
-- `eval()`: 簡単に１つの数式を計算する
-```
-val value = eval("3 + 4")
-```
-- `Calculator`: 変数、関数など、複数の数式を計算する
-  - 0.1.+ 以上で使える 
-   
-```
-val expr = arrayOf("x = 3 + 4", "y = 30 + 40", "x + y")
-val value = Calculator(expr).eval().value
-println(value)
-```
+- `eval()`: 簡単に１つの数式を計算します。
+    ```
+    val value = eval("3 + 4")
+    ```
+    
+- `Calculator`: 変数、関数など、複数の数式を計算します。
+    - 0.1.+ 以上で使えます。
+    - クラスを作るときに、数式を渡すことができます。
 
-```
-77
-```
+    ```
+    val expr = arrayOf("x = 3 + 4", "y = 30 + 40", "x + y")
+    val value = Calculator(expr).eval().value
+    println(value)
+    ```
 
-## このライブラリを使ったサンプルアプリ
+    - あるいは、後から数式を１つずつ計算することも可能です。
+
+    ```
+    val calc = Calculator()
+            .eval("x = 3 + 4")
+            .eval("y = 30 + 40")
+            .eval("x + y")
+    println(calc.value)
+    ```
+
+    - 結果は、同じです。
+
+    ```
+    77
+    ```
+
+## サンプルアプリ
 
 - 電卓です。
     - https://github.com/javecs/calc

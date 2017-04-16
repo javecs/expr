@@ -1,7 +1,8 @@
-package xyz.javecs.tools.expr;
+package xyz.javecs.tools.expr.test.java;
 
 import org.junit.Assert;
 import org.junit.Test;
+import xyz.javecs.tools.expr.Calculator;
 
 public class CalculatorTest {
     @Test

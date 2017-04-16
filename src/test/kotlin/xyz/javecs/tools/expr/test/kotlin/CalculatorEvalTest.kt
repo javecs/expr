@@ -1,7 +1,8 @@
-package xyz.javecs.tools.expr
+package xyz.javecs.tools.expr.test.kotlin
 
 import kotlin.test.assertEquals
 import org.junit.Test
+import xyz.javecs.tools.expr.Calculator
 
 class CalculatorEvalTest {
     @Test fun calcEvaluateTest1() {

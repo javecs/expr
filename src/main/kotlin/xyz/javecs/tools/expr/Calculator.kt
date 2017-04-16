@@ -2,7 +2,7 @@ package xyz.javecs.tools.expr
 
 import kotlin.collections.HashMap
 
-class Calculator(expressions: Array<String> = emptyArray()) : CalculatorContext {
+class Calculator(expressions: Array<String> = emptyArray()) : EvalContext {
     private val evaluator = EvalVisitor(this)
     private val symbol: HashMap<String, Double> = HashMap()
     private var expression = Expression()

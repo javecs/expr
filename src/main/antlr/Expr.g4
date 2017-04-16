@@ -16,4 +16,4 @@ expr: expr '*' expr     # Mul
     ;
 NUMBER: [0-9]+('.'[0-9]+)? ;
 ID: [a-zA-Z][a-zA-Z0-9]* ;
-WS: [ \t\r\n]+ -> skip ;
+WS: [ \t\r\t]+ -> skip ;

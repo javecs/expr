@@ -93,4 +93,17 @@ public interface ExprVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitId(ExprParser.IdContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Math}
+	 * labeled alternative in {@link ExprParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMath(ExprParser.MathContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExprParser#func}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunc(ExprParser.FuncContext ctx);
 }

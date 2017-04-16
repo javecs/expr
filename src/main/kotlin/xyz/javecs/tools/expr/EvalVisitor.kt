@@ -29,4 +29,15 @@ class EvalVisitor(val context: EvalContext) : ExprBaseVisitor<Expression>() {
         return Expression(id = id, value = value)
     }
 
+    override fun visitMath(ctx: ExprParser.MathContext?): Expression {
+        val func = ctx!!.func().text
+        val expr = visit(ctx.expr()).value
+        val value = when (func) {
+            "sin" -> Math.sin(expr)
+            "cos" -> Math.cos(expr)
+            "tan" -> Math.tan(expr)
+            else -> Double.NaN
+        }
+        return Expression(value = value)
+    }
 }

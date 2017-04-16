@@ -22,9 +22,21 @@ dependencies {
 }
 ```
 
-- kotlin
+- `eval()`: 簡単に１つの数式を計算する
 ```
 val value = eval("3 + 4")
+```
+- `Calculator`: 変数、関数など、複数の数式を計算する
+  - 0.1.+ 以上で使える 
+   
+```
+val expr = arrayOf("x = 3 + 4", "y = 30 + 40", "x + y")
+val value = Calculator(expr).evaluate().getValue()
+println(value)
+```
+
+```
+77
 ```
 
 ## このライブラリを使ったサンプルアプリ

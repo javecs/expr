@@ -31,7 +31,7 @@ val value = eval("3 + 4")
    
 ```
 val expr = arrayOf("x = 3 + 4", "y = 30 + 40", "x + y")
-val value = Calculator(expr).evaluate().getValue()
+val value = Calculator(expr).eval().value
 println(value)
 ```
 

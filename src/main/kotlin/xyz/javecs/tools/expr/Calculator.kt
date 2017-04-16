@@ -6,16 +6,16 @@ class Calculator(expressions: Array<String> = emptyArray()) : EvalContext {
     private val evaluator = EvalVisitor(this)
     private val symbol: HashMap<String, Double> = HashMap()
     private var expression = Expression()
-    var value: Number = Double.NaN
+    var value: Number = expression.value
         get() = expression.getValue()
 
     init {
         for (expr in expressions) {
-            evaluate(expr)
+            eval(expr)
         }
     }
 
-    fun evaluate(expr: String = ""): Calculator {
+    fun eval(expr: String = ""): Calculator {
         expression = when (expr.isEmpty()) {
             true -> expression
             else -> {

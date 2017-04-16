@@ -1,3 +1,5 @@
+@file:JvmName("Evaluator")
+
 package xyz.javecs.tools.expr
 
 import org.antlr.v4.runtime.ANTLRInputStream

@@ -10,17 +10,17 @@
 ## 使い方
 
 - gradle
-```
-repositories {
-    maven {
-        url  "http://dl.bintray.com/javecs/tools"
+    ```
+    repositories {
+        maven {
+            url  "http://dl.bintray.com/javecs/tools"
+        }
     }
-}
 
-dependencies {
-    compile 'xyz.javecs.tools:expr:0.1.+'
-}
-```
+    dependencies {
+        compile 'xyz.javecs.tools:expr:0.1.+'
+    }
+    ```
 
 - `eval()`: 簡単に１つの数式を計算します。
     ```

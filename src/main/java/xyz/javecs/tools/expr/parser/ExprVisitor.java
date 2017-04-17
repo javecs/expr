@@ -87,6 +87,13 @@ public interface ExprVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitPow(ExprParser.PowContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code Sign}
+	 * labeled alternative in {@link ExprParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSign(ExprParser.SignContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code Id}
 	 * labeled alternative in {@link ExprParser#expr}.
 	 * @param ctx the parse tree

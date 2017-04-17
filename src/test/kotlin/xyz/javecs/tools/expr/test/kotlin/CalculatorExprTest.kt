@@ -36,4 +36,9 @@ class CalculatorExprTest {
         assertEquals(7, calc.eval().value)
         assertEquals("x = 7", calc.eval().toString())
     }
+
+    @Test fun calcExpr7() {
+        val calc = Calculator(arrayOf("x = -1", "y = -1", "x + y"))
+        assertEquals(-2, calc.eval().value)
+    }
 }

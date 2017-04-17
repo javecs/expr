@@ -5,6 +5,7 @@ stat: expr                          # StatExpr
     | ID '=' expr                   # Assign
     ;
 expr: <assoc=right> expr '^' expr   # Pow
+    | ('+'|'-') expr                # Sign
     | expr '*' expr                 # Mul
     | expr '/' expr                 # Div
     | expr '%' expr                 # Mod

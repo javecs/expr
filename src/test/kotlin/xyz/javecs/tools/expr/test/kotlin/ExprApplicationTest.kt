@@ -44,5 +44,14 @@ class TestApplication {
         assertEquals(14, eval("(3 + 4) * 2"))
     }
 
+    @Test fun evalSign() {
+        assertEquals(-1, eval("-1"))
+        assertEquals(1, eval("+1"))
+        assertEquals(-4, eval("4 * -1"))
+        assertEquals(1, eval("-1*-1"))
+        assertEquals(0, eval("-1--1"))
+        assertEquals(-2, eval("-1+-1"))
+    }
+
 }
 

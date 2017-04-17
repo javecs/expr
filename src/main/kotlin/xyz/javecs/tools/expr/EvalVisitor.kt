@@ -11,6 +11,14 @@ class EvalVisitor(val context: EvalContext) : ExprBaseVisitor<Expression>() {
     override fun visitMul(ctx: ExprParser.MulContext?) = Expression(visit(ctx!!.expr(0)).value * visit(ctx.expr(1)).value)
     override fun visitMod(ctx: ExprParser.ModContext?) = Expression(visit(ctx!!.expr(0)).value % visit(ctx.expr(1)).value)
     override fun visitPow(ctx: ExprParser.PowContext?) = Expression(Math.pow(visit(ctx!!.expr(0)).value, visit(ctx.expr(1)).value))
+    override fun visitSign(ctx: ExprParser.SignContext?): Expression {
+        val value = visit(ctx!!.expr()).value
+        return Expression(when (ctx.start.text) {
+            "-" -> value * -1
+            else -> value
+        })
+    }
+
     override fun visitDiv(ctx: ExprParser.DivContext?): Expression {
         val left = visit(ctx!!.expr(0)).value
         val right = visit(ctx.expr(1)).value

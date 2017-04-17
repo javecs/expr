@@ -16,7 +16,7 @@ plugins {
 }
 
 group 'xyz.javecs.tools'
-version '0.1.6'
+version '0.1.7'
 
 apply plugin: 'kotlin'
 apply plugin: 'antlr'

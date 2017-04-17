@@ -26,7 +26,7 @@ public class ExprParser extends Parser {
 	};
 
 	private static final String[] _LITERAL_NAMES = {
-		null, "'='", "'*'", "'/'", "'%'", "'^'", "'+'", "'-'", "'('", "')'", "'sin'", 
+		null, "'='", "'^'", "'*'", "'/'", "'%'", "'+'", "'-'", "'('", "')'", "'sin'", 
 		"'cos'", "'tan'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
@@ -432,19 +432,19 @@ public class ExprParser extends Parser {
 					switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 					case 1:
 						{
-						_localctx = new MulContext(new ExprContext(_parentctx, _parentState));
+						_localctx = new PowContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
 						setState(33);
 						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
 						setState(34);
 						match(T__1);
 						setState(35);
-						expr(11);
+						expr(10);
 						}
 						break;
 					case 2:
 						{
-						_localctx = new DivContext(new ExprContext(_parentctx, _parentState));
+						_localctx = new MulContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
 						setState(36);
 						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
@@ -456,7 +456,7 @@ public class ExprParser extends Parser {
 						break;
 					case 3:
 						{
-						_localctx = new ModContext(new ExprContext(_parentctx, _parentState));
+						_localctx = new DivContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
 						setState(39);
 						if (!(precpred(_ctx, 8))) throw new FailedPredicateException(this, "precpred(_ctx, 8)");
@@ -468,7 +468,7 @@ public class ExprParser extends Parser {
 						break;
 					case 4:
 						{
-						_localctx = new PowContext(new ExprContext(_parentctx, _parentState));
+						_localctx = new ModContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
 						setState(42);
 						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
@@ -601,7 +601,7 @@ public class ExprParser extends Parser {
 		"\2\2\25\26\b\4\1\2\26\"\7\17\2\2\27\"\7\20\2\2\30\31\7\n\2\2\31\32\5\6"+
 		"\4\2\32\33\7\13\2\2\33\"\3\2\2\2\34\35\5\b\5\2\35\36\7\n\2\2\36\37\5\6"+
 		"\4\2\37 \7\13\2\2 \"\3\2\2\2!\25\3\2\2\2!\27\3\2\2\2!\30\3\2\2\2!\34\3"+
-		"\2\2\2\"\67\3\2\2\2#$\f\f\2\2$%\7\4\2\2%\66\5\6\4\r&\'\f\13\2\2\'(\7\5"+
+		"\2\2\2\"\67\3\2\2\2#$\f\f\2\2$%\7\4\2\2%\66\5\6\4\f&\'\f\13\2\2\'(\7\5"+
 		"\2\2(\66\5\6\4\f)*\f\n\2\2*+\7\6\2\2+\66\5\6\4\13,-\f\t\2\2-.\7\7\2\2"+
 		".\66\5\6\4\n/\60\f\b\2\2\60\61\7\b\2\2\61\66\5\6\4\t\62\63\f\7\2\2\63"+
 		"\64\7\t\2\2\64\66\5\6\4\b\65#\3\2\2\2\65&\3\2\2\2\65)\3\2\2\2\65,\3\2"+

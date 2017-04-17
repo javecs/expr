@@ -36,6 +36,7 @@ class TestApplication {
 
     @Test fun evalPow() {
         assertEquals(8, eval("2 ^ 3"))
+        assertEquals(512, eval("2 ^ 3 ^ 2"))
     }
 
     @Test fun evalParens() {

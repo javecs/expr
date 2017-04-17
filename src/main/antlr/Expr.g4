@@ -1,19 +1,19 @@
 grammar Expr;
 
 start: stat+ ;
-stat: expr              # StatExpr
-    | ID '=' expr       # Assign
+stat: expr                          # StatExpr
+    | ID '=' expr                   # Assign
     ;
-expr: expr '*' expr     # Mul
-    | expr '/' expr     # Div
-    | expr '%' expr     # Mod
-    | expr '^' expr     # Pow
-    | expr '+' expr     # Add
-    | expr '-' expr     # Sub
-    | NUMBER            # Number
-    | ID                # Id
-    | '(' expr ')'      # Parens
-    | func '(' expr ')' # Math
+expr: <assoc=right> expr '^' expr   # Pow
+    | expr '*' expr                 # Mul
+    | expr '/' expr                 # Div
+    | expr '%' expr                 # Mod
+    | expr '+' expr                 # Add
+    | expr '-' expr                 # Sub
+    | NUMBER                        # Number
+    | ID                            # Id
+    | '(' expr ')'                  # Parens
+    | func '(' expr ')'             # Math
     ;
 func: 'sin'
     | 'cos'

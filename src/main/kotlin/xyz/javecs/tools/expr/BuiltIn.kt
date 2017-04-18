@@ -1,6 +1,6 @@
 package xyz.javecs.tools.expr
 
-fun builtIn() = HashMap<String, (Double) -> Double>().apply {
+internal fun builtIn() = HashMap<String, (Double) -> Double>().apply {
     put("sin", { x -> Math.sin(x) })
     put("cos", { x -> Math.cos(x) })
     put("tan", { x -> Math.tan(x) })

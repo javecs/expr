@@ -5,7 +5,7 @@ import kotlin.collections.HashMap
 class Calculator(expressions: Array<String> = emptyArray()) : EvalContext {
     private val evaluator = EvalVisitor(this)
     private val symbol: HashMap<String, Double> = HashMap()
-    private val function: HashMap<String, (Double) -> Double> = HashMap()
+    private val function = builtIn()
     private var expression = Expression()
     var value: Number = expression.value
         get() = expression.getValue()
@@ -13,12 +13,6 @@ class Calculator(expressions: Array<String> = emptyArray()) : EvalContext {
     init {
         for (expr in expressions) {
             eval(expr)
-        }
-
-        function.apply {
-            put("sin", { x -> Math.sin(x) })
-            put("cos", { x -> Math.cos(x) })
-            put("tan", { x -> Math.tan(x) })
         }
     }
 

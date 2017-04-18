@@ -1,6 +1,7 @@
 package xyz.javecs.tools.expr
 
 internal interface EvalContext {
-    fun getSymbol(name: String): Double
-    fun putSymbol(name:String, value: Double)
+    fun get(name: String): Double
+    fun put(name:String, value: Double)
+    fun call(name: String, value: Double): Double
 }

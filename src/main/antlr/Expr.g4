@@ -11,14 +11,10 @@ expr: <assoc=right> expr '^' expr   # Pow
     | expr '%' expr                 # Mod
     | expr '+' expr                 # Add
     | expr '-' expr                 # Sub
+    | ID '(' expr ')'               # Function
     | NUMBER                        # Number
     | ID                            # Id
     | '(' expr ')'                  # Parens
-    | func '(' expr ')'             # Math
-    ;
-func: 'sin'
-    | 'cos'
-    | 'tan'
     ;
 NUMBER: [0-9]+('.'[0-9]+)? ;
 ID: [a-zA-Z][a-zA-Z0-9]* ;

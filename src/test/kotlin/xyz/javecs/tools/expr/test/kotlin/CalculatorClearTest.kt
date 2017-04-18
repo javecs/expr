@@ -4,7 +4,7 @@ import kotlin.test.assertEquals
 import org.junit.Test
 import xyz.javecs.tools.expr.Calculator
 
-class CalculatorFunTest {
+class CalculatorClearTest {
     @Test fun clearTest() {
         val calc = Calculator().eval("x = 3")
         assertEquals(3, calc.value)

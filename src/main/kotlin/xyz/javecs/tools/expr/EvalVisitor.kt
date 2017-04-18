@@ -27,25 +27,20 @@ internal class EvalVisitor(val context: EvalContext) : ExprBaseVisitor<Expressio
 
     override fun visitId(ctx: ExprParser.IdContext?): Expression {
         val id = ctx!!.ID().text
-        return Expression(id = id, value = context.getSymbol(id))
+        return Expression(id = id, value = context.get(id))
     }
 
     override fun visitAssign(ctx: ExprParser.AssignContext?): Expression {
         val id = ctx!!.ID().text
         val value = visit(ctx.expr()).value
-        context.putSymbol(id, value)
+        context.put(id, value)
         return Expression(id = id, value = value)
     }
 
-    override fun visitMath(ctx: ExprParser.MathContext?): Expression {
-        val func = ctx!!.func().text
+    override fun visitFunction(ctx: ExprParser.FunctionContext?): Expression {
+        val func = ctx!!.ID().text
         val expr = visit(ctx.expr()).value
-        val value = when (func) {
-            "sin" -> Math.sin(expr)
-            "cos" -> Math.cos(expr)
-            "tan" -> Math.tan(expr)
-            else -> Double.NaN
-        }
-        return Expression(value = value)
+        return Expression(value = context.call(func, expr))
     }
+
 }

@@ -107,9 +107,9 @@
 
 関数名 | 説明 | 例 | 結果 
 --------| --------|--------|--------
-  sin | サイン。三角関数の正弦。 | sin(1) | 0.8414709848078965
-  cos | コサイン。三角関数の余弦。 | cos(1) | 0.5403023058681398
-  tan | タンジェント。三角関数の正接。 | tan(1) | 1.5574077246549023
+ [sin](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#sin-double-) | 指定された角度の正弦(サイン)を返します。| sin(1) | 0.8414709848078965
+ [cos](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#cos-double-) | 指定された角度の余弦(コサイン)を返します。| cos(1) | 0.5403023058681398
+ [tan](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#tan-double-) | 指定された角度の正接(タンジェント)を返します。| tan(1) | 1.5574077246549023
   
 - 関数名の文字は、大文字と小文字を区別しません。
 

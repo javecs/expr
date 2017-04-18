@@ -26,4 +26,51 @@ class CalculatorFunctionTest {
         assertEquals(1.5574077246549023, Calculator().eval("Tan(1)").value)
     }
 
+    @Test fun asinTest() {
+        assertEquals(1.5707963267948966, Calculator().eval("asin(1)").value)
+    }
+
+    @Test fun acosTest() {
+        assertEquals(1.5707963267948966, Calculator().eval("acos(0)").value)
+    }
+
+    @Test fun atanTest() {
+        assertEquals(0.7853981633974483, Calculator().eval("atan(1)").value)
+    }
+
+    @Test fun expTest() {
+        assertEquals(2.718281828459045, Calculator().eval("exp(1)").value)
+    }
+
+    @Test fun logTest() {
+        assertEquals(0.6931471805599453, Calculator().eval("log(2)").value)
+    }
+
+    @Test fun log10Test() {
+        assertEquals(0.3010299956639812, Calculator().eval("log10(2)").value)
+    }
+
+    @Test fun sqrtTest() {
+        assertEquals(1.4142135623730951, Calculator().eval("sqrt(2)").value)
+    }
+
+    @Test fun sinhTest() {
+        assertEquals(1.1752011936438014, Calculator().eval("sinh(1)").value)
+    }
+
+    @Test fun coshTest() {
+        assertEquals(1.543080634815244, Calculator().eval("cosh(1)").value)
+    }
+
+    @Test fun tanhTest() {
+        assertEquals(0.7615941559557649, Calculator().eval("tanh(1)").value)
+    }
+
+    @Test fun radTest() {
+        assertEquals(0.017453292519943295, Calculator().eval("rad(1)").value)
+    }
+
+    @Test fun degTest() {
+        assertEquals(57.29577951308232, Calculator().eval("deg(1)").value)
+    }
 }

@@ -1,0 +1,26 @@
+package xyz.javecs.tools.expr
+
+fun builtIn() = HashMap<String, (Double) -> Double>().apply {
+    put("sin", { x -> Math.sin(x) })
+    put("cos", { x -> Math.cos(x) })
+    put("tan", { x -> Math.tan(x) })
+    put("asin", { x -> Math.asin(x) })
+    put("acos", { x -> Math.acos(x) })
+    put("atan", { x -> Math.atan(x) })
+    put("exp", { x -> Math.exp(x) })
+    put("log", { x -> Math.log(x) })
+    put("log10", { x -> Math.log10(x) })
+    put("sqrt", { x -> Math.sqrt(x) })
+    put("cbrt", { x -> Math.cbrt(x) })
+    put("ceil", { x -> Math.ceil(x) })
+    put("floor", { x -> Math.floor(x) })
+    put("rint", { x -> Math.rint(x) })
+    put("abs", { x -> Math.abs(x) })
+    put("ulp", { x -> Math.ulp(x) })
+    put("signum", { x -> Math.signum(x) })
+    put("sinh", { x -> Math.sinh(x) })
+    put("cosh", { x -> Math.cosh(x) })
+    put("tanh", { x -> Math.tanh(x) })
+    put("expm1", { x -> Math.expm1(x) })
+    put("log1p", { x -> Math.log1p(x) })
+}

@@ -110,6 +110,18 @@
  [sin](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#sin-double-) | 指定された角度の正弦(サイン)を返します。| sin(1) | 0.8414709848078965
  [cos](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#cos-double-) | 指定された角度の余弦(コサイン)を返します。| cos(1) | 0.5403023058681398
  [tan](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#tan-double-) | 指定された角度の正接(タンジェント)を返します。| tan(1) | 1.5574077246549023
+ [asin](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#asin-double-) | 指定された値の逆正弦(アーク・サイン)を返します。| asin(1) | 1.5707963267948966
+ [acos](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#acos-double-) | 指定された値の逆余弦(アーク・コサイン)を返します。| acos(0) | 1.5707963267948966
+ [atan](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#atan-double-) | 指定された値の逆正接(アーク・タンジェント)を返します。| atan(1) | 0.7853981633974483
+ [sinh](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#sinh-double-) | double値の双曲線正弦を返します。| sinh(1) | 1.1752011936438014
+ [cosh](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#cosh-double-) | double値の双曲線余弦を返します。| cosh(1) | 1.543080634815244
+ [tanh](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#tanh-double-) | double値の双曲線正接を返します。| tanh(1) | 0.7615941559557649
+ [exp](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#exp-double-) | オイラー数eをdouble値で累乗した値を返します。| exp(1) | 2.718281828459045
+ [log](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#log-double-) | 指定されたdouble値の自然対数(底はe)を返します。| log(2) | 0.6931471805599453
+ [log10](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#log10-double-) | double値の10を底とする対数を返します。| log10(2) | 0.3010299956639812
+ [sqrt](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#sqrt-double-) | double値の正しく丸めた正の平方根を返します。| sqrt(2) | 0.3010299956639812
+ [rad](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#toRadians-double-) | 度で計測した角度を、相当するラジアンに変換します。| rad(1) | 0.017453292519943295
+ [deg](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#toDegrees-double-) | ラジアンで計測した角度を、相当する度に変換します。| deg(1) | 57.29577951308232
   
 - 関数名の文字は、大文字と小文字を区別しません。
 

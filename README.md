@@ -103,6 +103,15 @@
     z には、7 が代入されます。
     ```
 
+### 常数
+
+常数名 | 説明 | 例 | 結果 
+--------| --------|--------|--------
+ [e](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#E) | 自然対数の底eにもっとも近いdouble値です。| e | 2.7182818284590452354
+ [pi](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#PI) | 円周とその直径の比piにもっとも近いdouble値です。| pi | 3.14159265358979323846
+  
+- 常数名の文字は、大文字と小文字を区別しません。
+
 ### 関数
 
 関数名 | 説明 | 例 | 結果 

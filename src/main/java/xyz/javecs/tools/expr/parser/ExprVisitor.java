@@ -80,6 +80,13 @@ public interface ExprVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMul(ExprParser.MulContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code Constant}
+	 * labeled alternative in {@link ExprParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitConstant(ExprParser.ConstantContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code Parens}
 	 * labeled alternative in {@link ExprParser#expr}.
 	 * @param ctx the parse tree

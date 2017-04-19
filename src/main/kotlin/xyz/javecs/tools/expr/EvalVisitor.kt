@@ -33,8 +33,7 @@ internal class EvalVisitor(val context: EvalContext) : ExprBaseVisitor<Expressio
     override fun visitAssign(ctx: ExprParser.AssignContext?): Expression {
         val id = ctx!!.ID().text
         val value = visit(ctx.expr()).value
-        context.put(id, value)
-        return Expression(id = id, value = value)
+        return Expression(id = id, value = context.put(id, value))
     }
 
     override fun visitFunction(ctx: ExprParser.FunctionContext?): Expression {
@@ -43,4 +42,8 @@ internal class EvalVisitor(val context: EvalContext) : ExprBaseVisitor<Expressio
         return Expression(value = context.call(func, expr))
     }
 
+    override fun visitConstant(ctx: ExprParser.ConstantContext?): Expression {
+        val name = ctx!!.CONSTANT().text
+        return Expression(value = context.get(name))
+    }
 }

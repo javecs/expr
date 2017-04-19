@@ -17,3 +17,8 @@ internal fun builtIn() = HashMap<String, (Double) -> Double>().apply {
     put("rad", { x -> Math.toRadians(x) })
     put("deg", { x -> Math.toDegrees(x) })
 }
+
+internal fun constant() = HashMap<String, Double>().apply {
+    put("pi", Math.PI)
+    put("e", Math.E)
+}

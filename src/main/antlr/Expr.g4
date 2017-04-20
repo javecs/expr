@@ -11,7 +11,7 @@ expr: <assoc=right> expr '^' expr   # Pow
     | expr '%' expr                 # Mod
     | expr '+' expr                 # Add
     | expr '-' expr                 # Sub
-    | ID '(' expr ')'               # Function
+    | ID '(' expr (',' expr)* ')'   # Function
     | CONSTANT                      # Constant
     | NUMBER                        # Number
     | ID                            # Id

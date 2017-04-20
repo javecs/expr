@@ -38,8 +38,9 @@ internal class EvalVisitor(val context: EvalContext) : ExprBaseVisitor<Expressio
 
     override fun visitFunction(ctx: ExprParser.FunctionContext?): Expression {
         val func = ctx!!.ID().text
-        val expr = visit(ctx.expr()).value
-        return Expression(value = context.call(func, expr))
+        val args = ArrayList<Double>()
+        ctx.expr().mapTo(args) { visit(it).value }
+        return Expression(value = context.call(func, args))
     }
 
     override fun visitConstant(ctx: ExprParser.ConstantContext?): Expression {

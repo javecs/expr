@@ -122,6 +122,7 @@
  [asin](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#asin-double-) | 指定された値の逆正弦(アーク・サイン)を返します。| asin(1) | 1.5707963267948966
  [acos](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#acos-double-) | 指定された値の逆余弦(アーク・コサイン)を返します。| acos(0) | 1.5707963267948966
  [atan](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#atan-double-) | 指定された値の逆正接(アーク・タンジェント)を返します。| atan(1) | 0.7853981633974483
+ [atan2](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#atan2-double-double-) | 直交座標(x, y)から極座標(r, theta)への変換から得られる角度thetaを返します。| atan2(90, 15) | 1.4056476493802699
  [sinh](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#sinh-double-) | double値の双曲線正弦を返します。| sinh(1) | 1.1752011936438014
  [cosh](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#cosh-double-) | double値の双曲線余弦を返します。| cosh(1) | 1.543080634815244
  [tanh](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#tanh-double-) | double値の双曲線正接を返します。| tanh(1) | 0.7615941559557649
@@ -129,8 +130,11 @@
  [log](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#log-double-) | 指定されたdouble値の自然対数(底はe)を返します。| log(2) | 0.6931471805599453
  [log10](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#log10-double-) | double値の10を底とする対数を返します。| log10(2) | 0.3010299956639812
  [sqrt](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#sqrt-double-) | double値の正しく丸めた正の平方根を返します。| sqrt(2) | 0.3010299956639812
+ [hypot](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#hypot-double-double-) | sqrt(x2 +y2)を返します(途中でオーバーフローやアンダーフローは発生しない)。| hypot(3, 4) | 5
  [rad](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#toRadians-double-) | 度で計測した角度を、相当するラジアンに変換します。| rad(1) | 0.017453292519943295
  [deg](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#toDegrees-double-) | ラジアンで計測した角度を、相当する度に変換します。| deg(1) | 57.29577951308232
+ [max](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#max-double-double-) | 2つのdouble値のうち大きいほうを返します。| max(e, pi) | 3.141592653589793
+ [min](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#min-double-double-) | 2つのdouble値のうち小さいほうを返します。| min(e, pi) | 2.718281828459045
   
 - 関数名の文字は、大文字と小文字を区別しません。
 

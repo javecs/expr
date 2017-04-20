@@ -38,6 +38,11 @@ class CalculatorFunctionTest {
         assertEquals(0.7853981633974483, Calculator().eval("atan(1)").value)
     }
 
+    @Test fun atan2Test() {
+        assertEquals(1.4056476493802699, Calculator().eval("atan2(90, 15)").value)
+        assertEquals(Double.NaN, Calculator().eval("atan2(1)").value)
+    }
+
     @Test fun expTest() {
         assertEquals(2.718281828459045, Calculator().eval("exp(1)").value)
     }
@@ -52,6 +57,11 @@ class CalculatorFunctionTest {
 
     @Test fun sqrtTest() {
         assertEquals(1.4142135623730951, Calculator().eval("sqrt(2)").value)
+    }
+
+    @Test fun hypotTest() {
+        assertEquals(5, Calculator().eval("hypot(3, 4)").value)
+        assertEquals(Double.NaN, Calculator().eval("hypot(1)").value)
     }
 
     @Test fun sinhTest() {
@@ -73,4 +83,16 @@ class CalculatorFunctionTest {
     @Test fun degTest() {
         assertEquals(57.29577951308232, Calculator().eval("deg(1)").value)
     }
+
+    @Test fun maxTest() {
+        assertEquals(Math.PI, Calculator().eval("max(e, pi)").value)
+        assertEquals(Double.NaN, Calculator().eval("max(1)").value)
+
+    }
+
+    @Test fun minTest() {
+        assertEquals(Math.E, Calculator().eval("min(e, pi)").value)
+        assertEquals(Double.NaN, Calculator().eval("min(1)").value)
+    }
+
 }

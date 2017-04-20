@@ -11,9 +11,7 @@ class Calculator(expressions: Array<String> = emptyArray()) : EvalContext {
         get() = expression.getValue()
 
     init {
-        for (expr in expressions) {
-            eval(expr)
-        }
+        expressions.forEach { eval(it) }
     }
 
     fun eval(expr: String = ""): Calculator {

@@ -37,7 +37,7 @@ class FunctionSignatureTest {
     }
 
     @Test fun signature5() {
-        arrayOf(" f", "f*", "ffff(", "1()").forEach {
+        arrayOf(" f", "f*", "ffff(", "1()", "()", "(  a )").forEach {
             try {
                 validate(it)
                 assertFails {  }

@@ -60,6 +60,20 @@
     
 - 変数と計算結果を初期化するときには、Calculatorの`clear()`を実行してください。
 
+### Function
+- ユーザー定義関数をプラグインとして実行できます。
+- 0.2.+ 以上で使えます。
+- `Function`を作成して、`plugin`で登録してください。
+
+    ```
+    val calc = Calculator()
+    calc.plugin(Function("f(x,y)", arrayOf("x + y")))
+    calc.eval("f(3,4)")
+    println(calc.value)
+
+    結果は、 7 です。
+    ```
+
 ## 計算可能な数式
 
 ### 演算子

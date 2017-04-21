@@ -6,12 +6,21 @@ class Calculator(expressions: Array<String> = emptyArray()) : EvalContext {
     private val evaluator = EvalVisitor(this)
     private val variables = HashMap<String, Double>()
     private val constants = constant()
+    private val functions = HashMap<String, Function>()
     private var expression = Expression()
     var value: Number = expression.value
         get() = expression.getValue()
 
     init {
         expressions.forEach { eval(it) }
+    }
+
+    private fun callFunction(name: String, args: Array<Double>): Double {
+        return if (functions.containsKey(name)) {
+            functions[name]!!.call(args)
+        } else {
+            invoke(name.toLowerCase(), args)
+        }
     }
 
     fun eval(expr: String = ""): Calculator {
@@ -31,9 +40,13 @@ class Calculator(expressions: Array<String> = emptyArray()) : EvalContext {
         expression = Expression()
     }
 
+    fun plugin(function: Function) {
+        functions.put(function.name, function)
+    }
+
     override fun toString() = expression.toString()
     override fun isConstant(name: String) = constants.contains(name.toLowerCase())
-    override fun call(name: String, args: ArrayList<Double>) = invoke(name.toLowerCase(), args)
+    override fun call(name: String, args: Array<Double>) = callFunction(name, args)
     override fun get(name: String) = constants.getOrDefault(name.toLowerCase(), variables.getOrDefault(name, Double.NaN))
     override fun put(name:String, value: Double) = when (isConstant(name)) {
         true -> Double.NaN

@@ -40,7 +40,7 @@ internal class EvalVisitor(val context: EvalContext) : ExprBaseVisitor<Expressio
         val func = ctx!!.ID().text
         val args = ArrayList<Double>()
         ctx.expr().mapTo(args) { visit(it).value }
-        return Expression(value = context.call(func, args))
+        return Expression(value = context.call(func, args.toTypedArray()))
     }
 
     override fun visitConstant(ctx: ExprParser.ConstantContext?): Expression {

@@ -5,7 +5,7 @@ internal fun constant() = HashMap<String, Double>().apply {
     put("e", Math.E)
 }
 
-internal fun invoke(name: String, args: ArrayList<Double>) = when (name) {
+internal fun invoke(name: String, args: Array<Double>) = when (name) {
     "sin" -> Math.sin(args[0])
     "cos" -> Math.cos(args[0])
     "tan" -> Math.tan(args[0])

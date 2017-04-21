@@ -35,13 +35,14 @@ class Calculator(expressions: Array<String> = emptyArray()) : EvalContext {
         return this
     }
 
+    fun plugin(function: Function): Calculator {
+        functions.put(function.name, function)
+        return this
+    }
+
     fun clear() {
         variables.clear()
         expression = Expression()
-    }
-
-    fun plugin(function: Function) {
-        functions.put(function.name, function)
     }
 
     override fun toString() = expression.toString()

@@ -41,4 +41,9 @@ class CalculatorExprTest {
         val calc = Calculator(arrayOf("x = -1", "y = -1", "x + y"))
         assertEquals(-2, calc.eval().value)
     }
+
+    @Test fun calcExpr8() {
+        val calc = Calculator(arrayOf("567/16*pi"))
+        assertEquals(111.33018966158829, calc.eval().value)
+    }
 }

@@ -6,11 +6,8 @@ stat: expr                          # StatExpr
     ;
 expr: <assoc=right> expr '^' expr   # Pow
     | ('+'|'-') expr                # Sign
-    | expr '*' expr                 # Mul
-    | expr '/' expr                 # Div
-    | expr '%' expr                 # Mod
-    | expr '+' expr                 # Add
-    | expr '-' expr                 # Sub
+    | expr op=('*'|'/'|'%') expr    # MulDivMod
+    | expr op=('+'|'-') expr        # AddSub
     | ID '(' expr (',' expr)* ')'   # Function
     | CONSTANT                      # Constant
     | NUMBER                        # Number

@@ -6,8 +6,8 @@ class Calculator(expressions: Array<String> = emptyArray()) : EvalContext {
     private val evaluator = EvalVisitor(this)
     private val variables = HashMap<String, Double>()
     private val constants = constant()
-    private val functions = HashMap<String, Function>()
     private var expression = Expression()
+    var environment = Environment()
     var value: Number = expression.value
         get() = expression.getValue()
 
@@ -15,12 +15,10 @@ class Calculator(expressions: Array<String> = emptyArray()) : EvalContext {
         expressions.forEach { eval(it) }
     }
 
-    private fun callFunction(name: String, args: Array<Double>): Double {
-        return if (functions.containsKey(name)) {
-            functions[name]!!.call(args)
-        } else {
-            invoke(name.toLowerCase(), args)
-        }
+    private fun callFunction(name: String, args: Array<Double>) = if (environment.isRegistered(name)) {
+        environment.invoke(name, args)
+    } else {
+        invoke(name.toLowerCase(), args)
     }
 
     fun eval(expr: String = ""): Calculator {
@@ -35,13 +33,14 @@ class Calculator(expressions: Array<String> = emptyArray()) : EvalContext {
         return this
     }
 
+    fun plugin(f: Function): Calculator {
+        environment.register(f)
+        return this
+    }
+
     fun clear() {
         variables.clear()
         expression = Expression()
-    }
-
-    fun plugin(function: Function) {
-        functions.put(function.name, function)
     }
 
     override fun toString() = expression.toString()

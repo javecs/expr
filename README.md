@@ -66,12 +66,16 @@
 - `Function`を作成して、`plugin`で登録してください。
 
     ```
-    val calc = Calculator()
-    calc.plugin(Function("f(x,y)", arrayOf("x + y")))
-    calc.eval("f(3,4)")
-    println(calc.value)
-
-    結果は、 7 です。
+    val value = Calculator()
+            .plugin(Function("f(x)", arrayOf("x + 1")))
+            .plugin(Function("g(x,y)", arrayOf("f(x) * y")))
+            .eval("x = 3")
+            .eval("y = 4")
+            .eval("g(x,y)")
+            .value
+    println(value)
+    
+    結果は、 16 です。
     ```
 
 ## 計算可能な数式

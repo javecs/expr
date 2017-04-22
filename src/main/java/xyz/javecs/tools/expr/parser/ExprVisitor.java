@@ -31,20 +31,6 @@ public interface ExprVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAssign(ExprParser.AssignContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Div}
-	 * labeled alternative in {@link ExprParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDiv(ExprParser.DivContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Add}
-	 * labeled alternative in {@link ExprParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAdd(ExprParser.AddContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code Function}
 	 * labeled alternative in {@link ExprParser#expr}.
 	 * @param ctx the parse tree
@@ -52,19 +38,12 @@ public interface ExprVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFunction(ExprParser.FunctionContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Sub}
+	 * Visit a parse tree produced by the {@code MulDivMod}
 	 * labeled alternative in {@link ExprParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSub(ExprParser.SubContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Mod}
-	 * labeled alternative in {@link ExprParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMod(ExprParser.ModContext ctx);
+	T visitMulDivMod(ExprParser.MulDivModContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code Number}
 	 * labeled alternative in {@link ExprParser#expr}.
@@ -73,12 +52,12 @@ public interface ExprVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitNumber(ExprParser.NumberContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Mul}
+	 * Visit a parse tree produced by the {@code AddSub}
 	 * labeled alternative in {@link ExprParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitMul(ExprParser.MulContext ctx);
+	T visitAddSub(ExprParser.AddSubContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code Constant}
 	 * labeled alternative in {@link ExprParser#expr}.

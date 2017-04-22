@@ -13,9 +13,11 @@ class CalculatorPluginTest {
     }
 
     @Test fun plugin2() {
-        val calc = Calculator()
-                .plugin(Function("f(x,y)", arrayOf("x + y")))
-                .plugin(Function("g(x,y,z)", arrayOf("f(x,y) + z")))
-        assertEquals(6, calc.eval("g(1,2,3)").value)
+        val value = Calculator()
+                .plugin(Function("f(x)", arrayOf("x + 1")))
+                .plugin(Function("g(x,y)", arrayOf("f(x) * y")))
+                .eval("g(3,4)")
+                .value
+        assertEquals(16, value)
     }
 }

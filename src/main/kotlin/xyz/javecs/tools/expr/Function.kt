@@ -17,6 +17,9 @@ class Function(signature: String, val codes: Array<String>) {
     private val calc = Calculator()
     val name = validate(signature).first
     val params = validate(signature).second
+    fun setEnvironment(environment: Environment) {
+        calc.environment = environment
+    }
     fun call(args: Array<Double>): Double {
         if (params.size != args.size) return Double.NaN
         calc.clear()

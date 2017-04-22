@@ -16,7 +16,9 @@ class CalculatorPluginTest {
         val value = Calculator()
                 .plugin(Function("f(x)", arrayOf("x + 1")))
                 .plugin(Function("g(x,y)", arrayOf("f(x) * y")))
-                .eval("g(3,4)")
+                .eval("x = 3")
+                .eval("y = 4")
+                .eval("g(x,y)")
                 .value
         assertEquals(16, value)
     }

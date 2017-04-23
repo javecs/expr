@@ -174,13 +174,13 @@
     ```
 
 
-## サンプルアプリ
+## 使われているところ...
 
 - 電卓です。
     - https://github.com/javecs/calc
     
-- LINE Messaging APIと連携したBotです。
-    - https://github.com/javecs/calc-bot
+- テキストを数式に変換し、計算するライブラリです。
+    - https://github.com/javecs/text2expr
     
 ## 使うもの
 

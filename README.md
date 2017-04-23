@@ -19,7 +19,7 @@
     }
 
     dependencies {
-        compile 'xyz.javecs.tools:expr:0.1.+'
+        compile 'xyz.javecs.tools:expr:0.2.+'
     }
     ```
 

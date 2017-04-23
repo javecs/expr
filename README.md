@@ -180,7 +180,7 @@
     - https://github.com/javecs/calc
     
 - テキストを数式に変換し、計算するライブラリです。
-    - https://github.com/javecs/text2expr
+    - https://github.com/javecs/text2expr
     
 ## 使うもの
 

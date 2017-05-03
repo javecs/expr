@@ -43,6 +43,8 @@ class Calculator(expressions: Array<String> = emptyArray()) : EvalContext {
         expression = Expression()
     }
 
+    fun variables(): Map<String, Double> = variables
+
     override fun toString() = expression.toString()
     override fun isConstant(name: String) = constants.contains(name.toLowerCase())
     override fun call(name: String, args: Array<Double>) = callFunction(name, args)

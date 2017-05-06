@@ -153,6 +153,7 @@
  [deg](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#toDegrees-double-) | ラジアンで計測した角度を、相当する度に変換します。| deg(1) | 57.29577951308232
  [max](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#max-double-double-) | 2つのdouble値のうち大きいほうを返します。| max(e, pi) | 3.141592653589793
  [min](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#min-double-double-) | 2つのdouble値のうち小さいほうを返します。| min(e, pi) | 2.718281828459045
+ format | 指定の小数点以下で四捨五入した結果を返します。| format(10/3, 2) | 3.33
   
 - 関数名の文字は、大文字と小文字を区別しません。
 

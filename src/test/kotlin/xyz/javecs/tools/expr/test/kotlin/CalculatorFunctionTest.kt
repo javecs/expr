@@ -95,4 +95,13 @@ class CalculatorFunctionTest {
         assertEquals(Double.NaN, Calculator().eval("min(1)").value)
     }
 
+    @Test fun formatTest() {
+        assertEquals(3, Calculator().eval("format(10/3, 0)").value)
+        assertEquals(3, Calculator().eval("format(10/3, -1)").value)
+        assertEquals(3.33, Calculator().eval("format(10/3, 2)").value)
+        assertEquals(1.56, Calculator().eval("format(Tan(1), 2)").value)
+        assertEquals(1.557, Calculator().eval("format(Tan(1), 3)").value)
+        assertEquals(3.141592653589793, Calculator().eval("format(pi, 25)").value)
+    }
+
 }

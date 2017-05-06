@@ -1,5 +1,15 @@
 package xyz.javecs.tools.expr
 
+import java.lang.Math.max
+import java.lang.Math.min
+import java.text.DecimalFormat
+
+private fun format(number: Double, fraction: Int): Double {
+    val format = DecimalFormat("#.#")
+    format.maximumFractionDigits = min(max(0, fraction), 20)
+    return format.format(number).toDouble()
+}
+
 internal fun constant() = HashMap<String, Double>().apply {
     put("pi", Math.PI)
     put("e", Math.E)
@@ -25,5 +35,6 @@ internal fun invoke(name: String, args: Array<Double>) = when (name) {
     "hypot" -> if (args.size == 2) Math.hypot(args[0], args[1]) else Double.NaN
     "max" -> if (args.size == 2) Math.max(args[0], args[1]) else Double.NaN
     "min" -> if (args.size == 2) Math.min(args[0], args[1]) else Double.NaN
+    "format" -> if (args.size == 2) format(args[0], args[1].toInt()) else Double.NaN
     else -> Double.NaN
 }

@@ -186,4 +186,4 @@
 ## 使うもの
 
 - [ANTLR 4.7](http://www.antlr.org/)
-- [Kotlin 1.1](https://kotlinlang.org/)
+- [Kotlin 1.2](https://kotlinlang.org/)

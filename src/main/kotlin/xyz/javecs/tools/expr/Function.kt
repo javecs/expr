@@ -1,5 +1,6 @@
 package xyz.javecs.tools.expr
 
+// https://regex101.com/r/BeAqi7/1
 private val sPattern = Regex("[a-zA-Z][a-zA-Z0-9]*\\s*\\(\\s*([a-zA-Z][a-zA-Z0-9]*\\s*(,\\s*[a-zA-Z][a-zA-Z0-9]*)*)?\\s*\\)")
 internal fun validate(signature: String): Pair<String, Array<String>> {
     if (!sPattern.matches(signature.trim())) throw Exception()
@@ -23,6 +24,7 @@ class Function(signature: String, val codes: Array<String>) {
     fun setEnvironment(environment: Environment) {
         calc.environment = environment
     }
+
     fun call(args: Array<Double>): Double {
         if (params.size != args.size) return Double.NaN
         calc.clear()

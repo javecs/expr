@@ -1,14 +1,12 @@
 package xyz.javecs.tools.expr
 
-import kotlin.collections.HashMap
-
 class Calculator(expressions: Array<String> = emptyArray()) : EvalContext {
     private val evaluator = EvalVisitor(this)
     private val variables = HashMap<String, Double>()
     private val constants = constant()
     private var expression = Expression()
     var environment = Environment()
-    var value: Number = expression.value
+    val value: Number
         get() = expression.getValue()
 
     init {
@@ -49,7 +47,7 @@ class Calculator(expressions: Array<String> = emptyArray()) : EvalContext {
     override fun isConstant(name: String) = constants.contains(name.toLowerCase())
     override fun call(name: String, args: Array<Double>) = callFunction(name, args)
     override fun get(name: String) = constants.getOrDefault(name.toLowerCase(), variables.getOrDefault(name, Double.NaN))
-    override fun put(name:String, value: Double) = when (isConstant(name)) {
+    override fun put(name: String, value: Double) = when (isConstant(name)) {
         true -> Double.NaN
         else -> {
             variables[name] = value

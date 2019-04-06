@@ -3,7 +3,7 @@ package xyz.javecs.tools.expr
 import xyz.javecs.tools.expr.parser.ExprBaseVisitor
 import xyz.javecs.tools.expr.parser.ExprParser
 
-internal class EvalVisitor(val context: EvalContext) : ExprBaseVisitor<Expression>() {
+internal class EvalVisitor(private val context: EvalContext) : ExprBaseVisitor<Expression>() {
     override fun visitParens(ctx: ExprParser.ParensContext?) = visit(ctx!!.expr())!!
     override fun visitNumber(ctx: ExprParser.NumberContext?) = Expression(ctx!!.NUMBER().text.toDouble())
     override fun visitPow(ctx: ExprParser.PowContext?) = Expression(Math.pow(visit(ctx!!.expr(0)).value, visit(ctx.expr(1)).value))
